@@ -24,13 +24,15 @@
 - ### CSS
   - SCSS
     - grid and flex,
-    - mixins ,
+    - mixins,
     - functions,
     - drop menu.
 - ### JS
   - customized button from video play
   - customized gallery
   - modal window
+    - phone number verification
+    - email verification
 - ### SVG
 - ### Map location
 - ### Webpack

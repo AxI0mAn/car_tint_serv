@@ -1,4 +1,5 @@
 @import './styles/base.scss';
+
 :root {
   font-size: 16px; //@include font_adapt(16, 12); //
 }
@@ -8,30 +9,38 @@ body {
   color: $T_white;
   font-family: 'Ubuntu Medium';
   height: 100%;
+
   .book_now {
     @include button(10rem, 2.5rem, 0.393rem, $font-family: 'Ubuntu Medium');
   }
+
   a {
     @include links();
     @include font_adapt(16, 12);
   }
+
   h1 {
     font-size: clamp(10px, 3rem, 85px);
   }
+
   h2 {
     font-size: func_rem(46);
   }
+
   h3 {
     font-size: func_rem(20);
   }
+
   h4 {
     font-size: 1rem;
   }
+
   p,
   li {
     font-family: 'Ubuntu Light';
     font-size: 1rem;
   }
+
   strong {
     display: block;
     color: $T_white;
@@ -39,6 +48,7 @@ body {
     font-size: func_rem(48);
     line-height: func_rem(54.098);
   }
+
   s {
     display: block;
     color: #dd5471;
@@ -47,27 +57,34 @@ body {
     font-size: func_rem(15);
     line-height: normal;
   }
+
   video {
     max-width: 100%;
     height: auto;
   }
+
   .button_play {
     display: block;
     @include сentering-xy();
+
     .btn_play_circle_75 {
       fill: $Neutrals;
       fill-opacity: 0.03;
     }
+
     .btn_play_circle_57 {
       fill: $Neutrals;
       fill-opacity: 0.1;
     }
+
     .btn_play_circle_45 {
       fill: $T_white;
     }
+
     #btn_play_triangle {
       fill: $yellow;
     }
+
     &:hover {
       .btn_play_circle_75 {
         stroke: $T_white;
@@ -76,6 +93,7 @@ body {
         animation: anim_btn_play_scale0 2.5s linear 0.2s infinite none;
         -webkit-animation: anim_btn_play_scale0 2.5s linear 0.2s infinite none;
       }
+
       .btn_play_circle_57 {
         stroke: $T_silver;
         stroke-opacity: 0.35;
@@ -83,6 +101,7 @@ body {
         animation: anim_btn_play_scale0 2.5s linear 0.1s infinite none;
         -webkit-animation: anim_btn_play_scale0 2.5s linear 0.1s infinite none;
       }
+
       .btn_play_circle_45 {
         fill: $Neutrals;
         opacity: 0.2;
@@ -90,6 +109,7 @@ body {
         animation: anim_btn_play_scale0 2s linear 0s infinite none;
         -webkit-animation: anim_btn_play_scale0 2s linear 0s infinite none;
       }
+
       #btn_play_triangle {
         stroke: $T_white;
         opacity: 1;
@@ -98,6 +118,7 @@ body {
         -webkit-animation: anim_btn_play_scale2 1s linear 0s 1 forwards;
       }
     }
+
     &:active {
       opacity: 0;
       transform: scale(0.1);
@@ -110,6 +131,7 @@ body {
       @include transitions;
     }
   }
+
   @keyframes anim_btn_play_scale0 {
     0% {
       transform: scale(1);
@@ -118,6 +140,7 @@ body {
       -ms-transform: scale(1);
       -o-transform: scale(1);
     }
+
     50% {
       stroke: $yellow;
       stroke-opacity: 0.75;
@@ -127,12 +150,14 @@ body {
       -ms-transform: scale(0.5);
       -o-transform: scale(0.5);
     }
+
     100% {
       stroke: $T_white;
       stroke-opacity: 0.4;
       transform: scale(1);
     }
   }
+
   @keyframes anim_btn_play_scale2 {
     0% {
       transform: scale(1);
@@ -141,6 +166,7 @@ body {
       -ms-transform: scale(1);
       -o-transform: scale(1);
     }
+
     50% {
       stroke: $yellow;
       stroke-opacity: 0.75;
@@ -150,6 +176,7 @@ body {
       -ms-transform: scale(2);
       -o-transform: scale(2);
     }
+
     100% {
       stroke: $T_white;
       stroke-opacity: 0.1;
@@ -160,9 +187,11 @@ body {
       -o-transform: scale(1.75);
     }
   }
+
   .logo {
     font-family: 'Trade Winds';
     @include font_adapt(18, 10);
+
     span {
       color: $yellow;
     }
@@ -207,18 +236,23 @@ header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
+
     nav {
       width: 60%;
+
       ul {
         width: 100%;
+
         .mini_nav {
           display: none;
         }
+
         li ul {
           width: 100%;
           display: flex;
           flex-flow: row nowrap;
           justify-content: space-evenly;
+
           li {
             a {
               width: 100%;
@@ -229,25 +263,30 @@ header {
       }
     }
   }
+
   .phone {
     width: 40%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-self: center;
+
     img {
       width: 1.2rem;
       height: 1.2rem;
       margin: auto 1%;
     }
+
     a {
       @include links(); //20
     }
   }
 }
+
 main {
   flex: 1 1 auto;
 }
+
 .hero {
   width: 100%;
   height: auto; //func_rem(870);
@@ -257,6 +296,7 @@ main {
     width: 100%;
     height: auto;
   }
+
   .hero_content {
     position: absolute;
     top: func_rem(180);
@@ -282,6 +322,7 @@ main {
       border-right: none;
       border-bottom: none;
     }
+
     ::after {
       content: '';
       position: absolute;
@@ -311,6 +352,7 @@ main {
           line-height: func_rem(100);
           text-transform: capitalize;
         }
+
         .welcome_story {
           height: func_rem(81);
           font-family: 'Ubuntu Medium';
@@ -320,6 +362,7 @@ main {
           margin-bottom: func_rem(30);
         }
       }
+
       .book_call {
         width: 100%;
         height: func_perc(520, 80);
@@ -333,10 +376,12 @@ main {
           font-size: func_rem(25.152);
           justify-self: flex-start;
         }
+
         .phone {
           padding-top: func_rem(20);
           padding-left: func_rem(30);
           justify-items: left;
+
           a {
             font-size: func_rem(31.681);
             letter-spacing: 0.2rem;
@@ -345,6 +390,7 @@ main {
       }
     }
   }
+
   .customers {
     width: func_rem(310);
     height: func_rem(93);
@@ -368,28 +414,34 @@ main {
     .customers_foto {
       margin-left: -20%;
       position: relative;
+
       img:first-child {
         position: absolute;
         top: 25%;
         left: -100%;
       }
+
       img:nth-child(2) {
         position: absolute;
         @include customers_foto(50%, 0%);
       }
+
       img:nth-child(3) {
         position: absolute;
         @include customers_foto(80%, 200%);
       }
+
       img:nth-child(4) {
         position: absolute;
         @include customers_foto(120%, 200%);
       }
+
       img:nth-child(5) {
         position: absolute;
         @include customers_foto(160%, 200%);
       }
     }
+
     .customers_number {
       margin-right: -10%;
       display: flex;
@@ -402,10 +454,12 @@ main {
         font-size: func_rem(30);
         line-height: normal;
       }
+
       :last-child {
         color: $yellow;
         font-size: 0.75rem;
       }
+
       p {
         line-height: func_rem(14);
         white-space: nowrap;
@@ -429,12 +483,14 @@ main {
     flex-flow: row nowrap;
     justify-content: center;
     text-align: center;
+
     h2,
     h3 {
       font-family: 'Ubuntu Bold';
       margin-top: func_rem(30);
       margin-bottom: func_rem(20);
     }
+
     .chose_card {
       width: func_perc(1320, 480);
       height: func_rem(300);
@@ -456,6 +512,7 @@ main {
         margin: 0 auto;
       }
     }
+
     .why_choose {
       width: func_perc(1320, 680);
       margin-left: func_rem(68);
@@ -466,6 +523,7 @@ main {
 
       text-align: center;
       font-size: func_rem(18);
+
       p {
         text-align: left;
         letter-spacing: 0.045rem;
@@ -479,12 +537,14 @@ main {
   width: 100%;
   height: func_rem(960);
   position: relative;
+
   > img:first-of-type {
     height: 100%;
     position: absolute;
     bottom: func_rem(73);
     left: func_rem(63);
   }
+
   .wind_tint_content {
     position: relative;
 
@@ -506,6 +566,7 @@ main {
       flex-flow: column nowrap;
       align-content: center;
       justify-content: space-between;
+
       > p {
         width: func_perc(732, 536);
         margin-top: func_rem(20);
@@ -513,6 +574,7 @@ main {
         font-size: func_rem(18);
         line-height: func_rem(30);
       }
+
       .wind_tint_showcase {
         height: func_rem(350);
         background-color: $grey;
@@ -547,11 +609,13 @@ main {
             display: flex;
             flex-flow: column nowrap;
             justify-content: space-between;
+
             h3 {
               text-transform: uppercase;
               margin-bottom: func_rem(21.639);
               color: $T_silver;
             }
+
             p {
               color: $T_silver;
               font-family: 'Ubuntu Medium';
@@ -559,6 +623,7 @@ main {
               line-height: func_rem(21.639);
             }
           }
+
           .book_now {
             align-self: center;
             background-color: $dark_grey;
@@ -567,6 +632,7 @@ main {
         }
       }
     }
+
     .wind_tint_show {
       width: func_perc(1320, 524);
       height: 100%;
@@ -592,16 +658,20 @@ main {
     }
   }
 }
+
 .wind_tint_promo .display_none {
   display: none;
 }
+
 .wind_tint_promo {
   width: 100%;
   position: relative;
   background-color: $dark_grey;
+
   video {
     margin: 0 auto;
   }
+
   .wind_tint_btn {
     position: absolute;
     top: 50%;
@@ -616,9 +686,11 @@ main {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+
     .wind_tint_btn_text {
       height: 100%;
       background-color: $dark_grey;
+
       p {
         margin: func_rem(12) func_rem(12);
         font-family: 'Ubuntu Medium';
@@ -627,6 +699,7 @@ main {
         white-space: pre-line;
       }
     }
+
     .wind_tint_btn_eye {
       width: func_rem(65);
       height: func_rem(65);
@@ -636,10 +709,12 @@ main {
       justify-content: center;
       align-content: center;
     }
+
     img {
       width: func_rem(33);
     }
   }
+
   .display_none {
     display: none;
   }
@@ -649,12 +724,14 @@ main {
   width: 100%;
   height: func_rem(760);
   position: relative;
+
   img:first-of-type {
     max-height: func_rem(700);
     position: absolute;
     bottom: func_rem(55);
     left: func_rem(63);
   }
+
   img:last-of-type {
     position: absolute;
     max-height: func_rem(200);
@@ -662,6 +739,7 @@ main {
     right: func_rem(10);
     opacity: 0.5;
   }
+
   .paint_prot_conteiner {
     width: func_perc(1920, 1526);
     height: func_perc(800, 460);
@@ -681,8 +759,10 @@ main {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
+
       ul {
         width: func_perc(373, 300);
+
         li {
           list-style-type: disc;
           font-family: 'Ubuntu Light';
@@ -691,6 +771,7 @@ main {
         }
       }
     }
+
     .paint_prot_showcase {
       width: func_perc(1526, 1078);
       height: func_rem(340);
@@ -745,12 +826,14 @@ main {
             display: flex;
             flex-flow: column nowrap;
             justify-content: space-between;
+
             h4 {
               color: $T_silver;
               text-align: center;
               line-height: func_rem(21.639);
             }
           }
+
           .book_now {
             width: 100%;
             background-color: $dark_grey;
@@ -766,11 +849,13 @@ main {
   height: func_rem(607);
   overflow: hidden;
   background-color: $grey;
+
   .gallery_conteiner {
     width: max-content;
     height: func_perc(607, 407);
     margin: func_rem(100) auto;
     margin-left: func_rem(300);
+
     .gallery_header {
       width: func_perc(1920, 1000);
       height: func_rem(60);
@@ -810,16 +895,19 @@ main {
           font-size: xx-large;
           background-color: $dark_grey;
           color: $T_white;
+
           &:hover {
             background-color: $T_white;
             color: $yellow;
             @include transitions;
           }
+
           &:active {
             text-shadow: -15px 0px 5px $yellow;
             @include transitions;
           }
         }
+
         .right {
           transform: rotateY(0deg);
           -webkit-transform: rotateY(0deg);
@@ -829,13 +917,16 @@ main {
         }
       }
     }
+
     .gallery_img {
       @include transitions;
+
       img {
         display: inline-block;
         max-width: func_rem(312);
         height: func_rem(302);
       }
+
       transform: translateX(0px);
       -webkit-transform: translateX(0px);
       -moz-transform: translateX(0px);
@@ -878,6 +969,7 @@ main {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
+
       .cer_coat_main_conteiner_text {
         width: 100%;
         height: func_rem(230);
@@ -886,18 +978,22 @@ main {
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
+
         p {
           font-size: func_rem(18);
           line-height: func_rem(30);
         }
       }
+
       .cer_coat_video {
         position: relative;
       }
+
       .display_none {
         display: none;
       }
     }
+
     .cer_coat_showcase {
       width: func_perc(1320, 630); // in maket 516
       height: func_perc(600, 551); // in maket 481
@@ -929,6 +1025,7 @@ main {
           margin-bottom: 0;
           height: auto;
         }
+
         .cer_coat_features_container {
           width: func_perc(246, 204);
           height: func_perc(481, 296);
@@ -937,6 +1034,7 @@ main {
           flex-flow: column nowrap;
           justify-content: space-evenly;
           align-self: center;
+
           h3 {
             text-underline-offset: 5px;
             text-decoration: underline;
@@ -947,12 +1045,15 @@ main {
             -moz-text-decoration-style: solid;
             -moz-text-decoration-color: $yellow;
           }
+
           ul {
             margin-left: 2rem;
             list-style: none;
+
             li {
               line-height: func_rem(30);
               position: relative;
+
               &::before {
                 content: '';
                 position: absolute;
@@ -968,6 +1069,7 @@ main {
             }
           }
         }
+
         .book_now {
           background-color: $dark_grey;
           align-self: center;
@@ -996,6 +1098,7 @@ main {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+
     .message {
       width: func_perc(1320, 545);
       height: 100%;
@@ -1007,14 +1110,17 @@ main {
       .message_text {
         width: 100%;
         height: func_rem(133);
+
         p {
           margin-top: func_rem(20);
           line-height: func_rem(30);
         }
       }
+
       #form,
       #form_modal {
         margin-top: 1rem;
+
         input {
           width: 100%;
           height: func_rem(26);
@@ -1025,10 +1131,12 @@ main {
           color: $T_white;
           background-color: $bgr_body;
           border: 1px solid $Neutrals;
+
           &:invalid {
             border: 2px solid $Neutrals;
           }
         }
+
         .red_star {
           position: relative;
 
@@ -1040,6 +1148,7 @@ main {
             left: 0.75rem;
             top: 1rem;
           }
+
           #f_tel + span,
           #f_tel_modal + span {
             display: inline-block;
@@ -1048,6 +1157,7 @@ main {
             left: 0.75rem;
             top: 1rem;
           }
+
           #f_name:focus + span,
           #f_name:valid + span,
           #f_tel:focus + span,
@@ -1059,6 +1169,7 @@ main {
             display: none;
           }
         }
+
         .send_message {
           width: 100%;
           height: func_rem(48);
@@ -1071,31 +1182,37 @@ main {
           -moz-border-radius: func_rem(5);
           -ms-border-radius: func_rem(5);
           -o-border-radius: func_rem(5);
+
           &:hover {
             color: $push;
             text-shadow:
               1px 3px 0 rgb(70, 70, 70),
               1px 5px 5px rgb(103, 101, 101);
           }
+
           &:active {
             text-shadow: -3px -2px 3px rgba(70, 70, 70, 0.338);
             letter-spacing: 0.07rem;
           }
+
           @include transitions;
         }
       }
+
       .connect_contact {
         width: 100%;
         height: func_rem(100);
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+
         .contact {
           width: func_perc(545, 370);
           height: 100%;
           display: flex;
           flex-flow: column nowrap;
           justify-content: space-between;
+
           .phone,
           .adress {
             font-size: func_rem(18);
@@ -1103,6 +1220,7 @@ main {
             display: flex;
             flex-flow: row nowrap;
             justify-content: flex-start;
+
             > img {
               margin-right: 1rem;
               width: 1.2rem;
@@ -1110,12 +1228,14 @@ main {
             }
           }
         }
+
         .social {
           width: func_perc(545, 100);
           height: 50%;
           display: flex;
           flex-flow: row nowrap;
           justify-content: space-between;
+
           a {
             width: func_rem(33);
             height: func_rem(33);
@@ -1129,9 +1249,11 @@ main {
             &:hover {
               background-color: $yellow;
             }
+
             &:active {
               background-color: $red;
             }
+
             @include transitions;
 
             img {
@@ -1142,6 +1264,7 @@ main {
         }
       }
     }
+
     .map_location {
       width: func_perc(1320, 645);
       height: 100%;
@@ -1160,12 +1283,14 @@ main {
   background-color: $dark_grey;
   text-align: center;
   position: relative;
+
   img:first-of-type {
     max-height: func_rem(200);
     position: absolute;
     bottom: func_rem(75);
     right: 0;
   }
+
   .free_quote_text {
     position: absolute;
     height: func_rem(243);
@@ -1177,14 +1302,17 @@ main {
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+
     h2 {
       font-family: 'Open Sans Bold';
       font-size: func_rem(46);
     }
+
     p {
       font-size: func_rem(18);
       line-height: func_rem(30);
     }
+
     .book_now {
       width: func_rem(186);
     }
@@ -1212,9 +1340,11 @@ footer {
 
     .garant {
       width: func_rem(271);
+
       .garant_header {
         margin-bottom: func_rem(30);
       }
+
       .garant_story {
         line-height: func_rem(30);
       }
@@ -1224,10 +1354,12 @@ footer {
       width: func_rem(271);
       height: 100%;
       line-height: func_rem(30);
+
       p {
         font-size: func_rem(22);
         margin-bottom: func_rem(30);
       }
+
       .phone,
       .adress {
         font-size: func_rem(18);
@@ -1235,6 +1367,7 @@ footer {
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-start;
+
         img {
           margin-right: 1rem;
           width: 1.2rem;
@@ -1242,6 +1375,7 @@ footer {
         }
       }
     }
+
     .services {
       width: func_rem(271);
 
@@ -1250,6 +1384,7 @@ footer {
         font-family: 'Ubuntu Medium';
         margin-bottom: func_rem(35);
       }
+
       nav {
         a {
           display: block;
@@ -1260,6 +1395,7 @@ footer {
     }
   }
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -1271,6 +1407,7 @@ footer {
   background: none;
   background-color: rgba(119, 126, 144, 0.75); // = $grey: #343436;
   cursor: pointer;
+
   .connect_conteiner {
     background-color: $dark_grey;
     //=$grey:;
@@ -1282,30 +1419,46 @@ footer {
     -moz-border-radius: 2rem;
     -ms-border-radius: 2rem;
     -o-border-radius: 2rem;
+
     .message {
       width: 96%;
       margin-left: 2%;
       justify-content: space-evenly;
       align-content: center;
+
+      .btn_close {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 30%;
+        height: 3rem;
+        border-top-right-radius: 2rem;
+      }
+
       .message_text {
         margin: 0;
+
         h2 {
           text-align: center; //new
         }
+
         p {
           margin-top: func_rem(30); //func_rem(20);
           line-height: func_rem(20); //func_rem(30);
           margin-bottom: 1rem; //new
         }
+
         #form_modal {
           height: 30%;
         }
+
         .connect_contact {
           .contact {
             .adress {
               margin-top: 1rem; //new
             }
           }
+
           .social {
             a {
               background-color: $dark_grey;
