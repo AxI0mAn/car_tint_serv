@@ -1,0 +1,183 @@
+// @include font_adapt(18, 10);
+// func_rem(15);
+// func_perc(1415, 80);
+
+//============= F U N C T I O N s =================//
+
+//функция для пересчета из РХ в REM  func_rem(15);
+@function func_rem($px) {
+  @return calc($px / $rem) + rem;
+}
+//функция для расчета % этого элемета ($this_px), относительно родительского ($parent_px)
+@function func_perc($parent_px, $this_px) {
+  @return calc($this_px / $parent_px) * 100%;
+}
+
+//функция для получения отзывчивого свойства
+@function val_respons($maxSizeValue, $minSizeValue) {
+  $deltaSize: $maxSizeValue - $minSizeValue;
+  @return calc(
+    #{$minSizeValue + px} + #{$deltaSize} *
+      ((100vw - #{$minWidth + px}) / (#{$maxWidth} - #{$minWidth}))
+  );
+}
+
+//============= M I X I N s =================//
+
+// Адаптация текста между макетным и минимальным значениями
+
+@mixin font_adapt($bigSize, $smallSize) {
+  $deltaMaxSize: $bigSize - $smallSize;
+  $deltaMinSize: 1.7 * $deltaMaxSize;
+  @media (max-width: $maxWidth + px) {
+    // $point_768  заменил на $maxWidth
+    font-size: calc(
+      #{$smallSize + px} + #{$deltaMinSize} * ((100vw - #{$minWidth}) / #{$maxWidth})
+    );
+  } /*
+  @media (min-width: $point_768 + px) and (max-width: $point_1440 + px) {
+    font-size: calc(#{$smallSize + px} + #{$deltaMaxSize} * (100vw / #{$maxWidth}));
+  }*/
+  @media (min-width: $maxWidth + 1px) {
+    // $point_1440  заменил на $maxWidth
+    font-size: calc(#{$smallSize + px} + #{$deltaMaxSize} * (100vw / #{$maxWidth}));
+  }
+}
+
+// Адаптация элементов через отзывчивое свойство mixin НЕ УДОБНО. ФУНКЦИЯ УДОБНЕЕ - ЕСТЬ ВВЕРХУ
+
+@mixin val_adapt($property, $maxSizeValue, $minSizeValue, $typeMode) {
+  $deltaSize: $maxSizeValue - $minSizeValue;
+  @if $typeMode==1 {
+    // $typeMode==1 - миксин работает только при уменьшении экрана
+    #{$property}: #{$maxSizeValue + px};
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSizeValue + px} + #{$deltaSize} *
+          ((100vw - #{$minWidth + px}) / (#{$maxWidthContainer} - #{$minWidth}))
+      );
+    }
+  } @else if $typeMode==2 {
+    // $typeMode==2 - миксин работает только при увеличении экрана
+    #{$property}: #{$maxSizeValue + px};
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSizeValue + px} + #{$deltaSize} *
+          ((100vw - #{$minWidth + px}) / (#{$maxWidth} - #{$minWidth}))
+      );
+    }
+  } @else {
+    // миксин работает ВСЕГДА
+    #{$property}: calc(
+      #{$minSizeValue +
+        px} +
+        #{$deltaSize} *
+        ((100vw - #{$minWidth + px}) / (#{$maxWidth} - #{$minWidth}))
+    );
+  }
+}
+
+// Адаптация через ограничение размера с помощью вилки (clamp) для любого элемента от минимум (1rem) до максимум (85px) с учетом предпочтительного размера (3rem)
+// font-size: clamp(1rem, 3rem, 85px);
+// width: clamp(100px, 500px, 100rem);
+
+//customers
+@mixin customers_foto($trans, $to_left) {
+  position: absolute;
+  transform: translateX($trans);
+  top: 25%;
+  left: $to_left;
+  -webkit-transform: translateX($trans);
+  -moz-transform: translateX($trans);
+  -ms-transform: translateX($trans);
+  -o-transform: translateX($trans);
+}
+
+// кнопки
+@mixin button($width, $height, $bord-radius, $font-family: 'Ubuntu Medium') {
+  width: $width;
+  height: $height;
+  border-radius: $bord-radius;
+  background-color: $yellow;
+  cursor: pointer;
+  //font-size: $font_size;
+  font-family: $font-family;
+  color: $T_white;
+  text-align: center;
+  line-height: normal;
+  text-transform: capitalize;
+  &:hover {
+    color: $push;
+    text-shadow:
+      1px 3px 0 rgb(70, 70, 70),
+      1px 5px 5px rgb(103, 101, 101);
+  }
+  &:active {
+    text-shadow: -3px -2px 3px rgba(70, 70, 70, 0.338);
+    letter-spacing: 0.07rem;
+  }
+  @include transitions;
+}
+
+// псевдоклассы для ссылок
+@mixin links() {
+  font-family: 'Ubuntu Medium';
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.72px;
+  text-transform: capitalize;
+  &:link {
+    color: $T_white;
+  }
+  &:visited {
+    color: $T_white;
+  }
+  &:hover {
+    color: $yellow;
+  }
+  &:active {
+    color: $push;
+  }
+  @include transitions;
+}
+
+//переходы между состояниями
+@mixin transitions {
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+//отцентрировать блок по осям х/у
+
+@mixin сentering-xy() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+@mixin сentering-x() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+@mixin сentering-y() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}

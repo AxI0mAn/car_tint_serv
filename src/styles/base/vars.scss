@@ -1,0 +1,27 @@
+$bord: 2px solid rgb(255, 153, 0);
+
+$minWidth: 320; // ширинa экрана мобильника
+$maxWidth: 1920; // ширина полотна макета
+$maxWidthContainer: 1920; // ширина ограничивающего контейнера именно тут - совпадает с $maxWidth
+
+/*
+$point_1920: $maxWidth - 2;
+$point_1440: 1339;
+$point_992: 991.98;
+$point_768: 767.98;
+$point_480: 479.98;
+*/
+
+//размер шрифта для <html> по умолчанию
+$rem: 16; //px
+
+// oсновные цвета макета
+$T_white: #ffffff;
+$T_silver: #969696;
+$yellow: #f2c938;
+$bgr_body: #28282a;
+$dark_grey: #222224;
+$grey: #343436;
+$red: #dd5471;
+$Neutrals: rgb(119, 126, 144);
+$push: rgb(0, 255, 170);
