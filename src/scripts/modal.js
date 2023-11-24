@@ -5,6 +5,7 @@ export default function modal() {
   for (let btn of btns) {
     btn.addEventListener('click', () => {
       modal.style.display = 'block';
+      history.pushState({}, '', '#modal');
     });
   }
   window.onclick = function (event) {
@@ -15,4 +16,7 @@ export default function modal() {
   close.addEventListener('click', () => {
     modal.style.display = 'none';
   });
+  window.onpopstate = function (event) {
+    modal.style.display = 'none';
+  };
 }

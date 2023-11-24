@@ -1189,7 +1189,7 @@ main {
           -o-border-radius: func_rem(5);
 
           &:hover {
-            color: $push;
+            color: $T_white;
             text-shadow:
               1px 3px 0 rgb(70, 70, 70),
               1px 5px 5px rgb(103, 101, 101);
@@ -1433,11 +1433,27 @@ footer {
 
       .btn_close {
         position: absolute;
-        top: 0px;
+        bottom: 0px;
         right: 0px;
         width: 30%;
-        height: 3rem;
-        border-top-right-radius: 2rem;
+        height: 5rem;
+        border-bottom-right-radius: 2rem;
+        font-size: 2rem;
+        color: $push;
+        text-shadow:
+          1px 3px 0 rgb(70, 70, 70),
+          1px 5px 5px rgb(103, 101, 101);
+
+        &:hover {
+          color: $T_white;
+          @include transitions;
+        }
+
+        &:active {
+          letter-spacing: 0.7rem;
+          opacity: 0;
+          @include transitions;
+        }
       }
 
       .message_text {
