@@ -8,6 +8,7 @@
 @function func_rem($px) {
   @return calc($px / $rem) + rem;
 }
+
 //функция для расчета % этого элемета ($this_px), относительно родительского ($parent_px)
 @function func_perc($parent_px, $this_px) {
   @return calc($this_px / $parent_px) * 100%;
@@ -29,16 +30,19 @@
 @mixin font_adapt($bigSize, $smallSize) {
   $deltaMaxSize: $bigSize - $smallSize;
   $deltaMinSize: 1.7 * $deltaMaxSize;
-  @media (max-width: $maxWidth + px) {
+
+  @media (max-width: ($maxWidth + 0px)) {
     // $point_768  заменил на $maxWidth
     font-size: calc(
       #{$smallSize + px} + #{$deltaMinSize} * ((100vw - #{$minWidth}) / #{$maxWidth})
     );
-  } /*
+  }
+
+  /*
   @media (min-width: $point_768 + px) and (max-width: $point_1440 + px) {
     font-size: calc(#{$smallSize + px} + #{$deltaMaxSize} * (100vw / #{$maxWidth}));
   }*/
-  @media (min-width: $maxWidth + 1px) {
+  @media (min-width: ($maxWidth + 1px)) {
     // $point_1440  заменил на $maxWidth
     font-size: calc(#{$smallSize + px} + #{$deltaMaxSize} * (100vw / #{$maxWidth}));
   }
@@ -48,9 +52,11 @@
 
 @mixin val_adapt($property, $maxSizeValue, $minSizeValue, $typeMode) {
   $deltaSize: $maxSizeValue - $minSizeValue;
+
   @if $typeMode==1 {
     // $typeMode==1 - миксин работает только при уменьшении экрана
     #{$property}: #{$maxSizeValue + px};
+
     @media (max-width: #{$maxWidthContainer + px}) {
       #{$property}: calc(
         #{$minSizeValue + px} + #{$deltaSize} *
@@ -60,6 +66,7 @@
   } @else if $typeMode==2 {
     // $typeMode==2 - миксин работает только при увеличении экрана
     #{$property}: #{$maxSizeValue + px};
+
     @media (min-width: #{$maxWidthContainer + px}) {
       #{$property}: calc(
         #{$minSizeValue + px} + #{$deltaSize} *
@@ -106,16 +113,19 @@
   text-align: center;
   line-height: normal;
   text-transform: capitalize;
+
   &:hover {
     color: $push;
     text-shadow:
       1px 3px 0 rgb(70, 70, 70),
       1px 5px 5px rgb(103, 101, 101);
   }
+
   &:active {
     text-shadow: -3px -2px 3px rgba(70, 70, 70, 0.338);
     letter-spacing: 0.07rem;
   }
+
   @include transitions;
 }
 
@@ -127,18 +137,23 @@
   line-height: normal;
   letter-spacing: 0.72px;
   text-transform: capitalize;
+
   &:link {
     color: $T_white;
   }
+
   &:visited {
     color: $T_white;
   }
+
   &:hover {
     color: $yellow;
   }
+
   &:active {
     color: $push;
   }
+
   @include transitions;
 }
 
@@ -163,6 +178,7 @@
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
 }
+
 @mixin сentering-x() {
   position: absolute;
   left: 50%;
@@ -172,6 +188,7 @@
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
+
 @mixin сentering-y() {
   position: absolute;
   top: 50%;

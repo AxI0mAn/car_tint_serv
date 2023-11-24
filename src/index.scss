@@ -895,6 +895,7 @@ main {
           font-size: xx-large;
           background-color: $dark_grey;
           color: $T_white;
+          position: relative;
 
           &:hover {
             background-color: $T_white;
@@ -905,6 +906,10 @@ main {
           &:active {
             text-shadow: -15px 0px 5px $yellow;
             @include transitions;
+          }
+
+          span {
+            @include сentering-xy();
           }
         }
 
