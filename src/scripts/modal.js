@@ -16,7 +16,7 @@ export default function modal() {
   close.addEventListener('click', () => {
     modal.style.display = 'none';
   });
-  window.onpopstate = function (event) {
+  window.onpopstate = function () {
     modal.style.display = 'none';
   };
 }
