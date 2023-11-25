@@ -9,4 +9,4 @@ video_control('.btn_video0', 0);
 video_control('.btn_video1', 1);
 modal();
 // gallery_swipe();
-// gallery();
+gallery();
