@@ -10,8 +10,8 @@ export default function gallery_swipe() {
   let style = getComputedStyle(view_line, true);
   let clientW = parseFloat(style.width);
   let clientOW = view_line.clientWidth;
-  console.log("clientW", clientW);
-  console.log("clientOW", clientOW);
+  console.log('clientW', clientW);
+  console.log('clientOW', clientOW);
   function slide_next() {
     ++counter;
     if (step * counter > 90) {
@@ -39,23 +39,22 @@ export default function gallery_swipe() {
     slide_next();
   });
 
-
   view_line.addEventListener(
-    "touchstart",
-    (e) => {
+    'touchstart',
+    e => {
       clientX = e.touches[0].clientX;
-      console.log("clientX", clientX);
+      console.log('clientX', clientX);
     },
-    false,
+    false
   );
 
   view_line.addEventListener(
-    "touchend", //move
-    (e) => {
+    'touchend', //move
+    e => {
       let deltaX;
       deltaX = e.changedTouches[0].clientX - clientX;
       current_X += deltaX;
-      console.log("current_X", current_X);
+      console.log('current_X', current_X);
       if (deltaX > 0) {
         // console.log("deltaX > 0 left -> right");
         // if (counter <= 0) {
@@ -63,8 +62,7 @@ export default function gallery_swipe() {
         //   view_line.style.transform = `translateX(0)`;
         // } else
         view_line.style.transform = `translateX(${current_X}px)`;
-      }
-      else {
+      } else {
         // console.log("deltaX", deltaX);
         // if (Math.abs(current_X) >= clientW * 5) { //????????
         //   console.log("current_X >= clientW", Math.abs(current_X), clientW);
@@ -75,6 +73,6 @@ export default function gallery_swipe() {
         view_line.style.transform = `translateX(${current_X}px)`;
       }
     },
-    false,
+    false
   );
 }

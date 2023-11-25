@@ -292,7 +292,7 @@ main {
   height: auto; //func_rem(870);
   position: relative;
 
-  >img {
+  > img {
     width: 100%;
     height: auto;
   }
@@ -538,7 +538,7 @@ main {
   height: func_rem(960);
   position: relative;
 
-  >img:first-of-type {
+  > img:first-of-type {
     height: 100%;
     position: absolute;
     bottom: func_rem(73);
@@ -567,7 +567,7 @@ main {
       align-content: center;
       justify-content: space-between;
 
-      >p {
+      > p {
         width: func_perc(732, 536);
         margin-top: func_rem(20);
         margin-bottom: func_rem(50);
@@ -951,7 +951,7 @@ main {
   position: relative;
   background-color: $dark_grey;
 
-  >img:first-of-type {
+  > img:first-of-type {
     max-height: func_rem(800);
     position: absolute;
     right: func_rem(63);
@@ -1149,8 +1149,8 @@ main {
         .red_star {
           position: relative;
 
-          #f_name+span,
-          #f_name_modal+span {
+          #f_name + span,
+          #f_name_modal + span {
             display: inline-block;
             color: $red;
             position: absolute;
@@ -1158,8 +1158,8 @@ main {
             top: 1rem;
           }
 
-          #f_tel+span,
-          #f_tel_modal+span {
+          #f_tel + span,
+          #f_tel_modal + span {
             display: inline-block;
             color: $red;
             position: absolute;
@@ -1167,14 +1167,14 @@ main {
             top: 1rem;
           }
 
-          #f_name:focus+span,
-          #f_name:valid+span,
-          #f_tel:focus+span,
-          #f_tel:valid+span,
-          #f_name_modal:focus+span,
-          #f_name_modal:valid+span,
-          #f_tel_modal:focus+span,
-          #f_tel_modal:valid+span {
+          #f_name:focus + span,
+          #f_name:valid + span,
+          #f_tel:focus + span,
+          #f_tel:valid + span,
+          #f_name_modal:focus + span,
+          #f_name_modal:valid + span,
+          #f_tel_modal:focus + span,
+          #f_tel_modal:valid + span {
             display: none;
           }
         }
@@ -1230,7 +1230,7 @@ main {
             flex-flow: row nowrap;
             justify-content: flex-start;
 
-            >img {
+            > img {
               margin-right: 1rem;
               width: 1.2rem;
               height: 1.2rem;
