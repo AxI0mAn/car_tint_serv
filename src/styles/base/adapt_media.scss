@@ -123,10 +123,6 @@
   .gallery {
     .gallery_conteiner {
       margin-left: func_rem(150); //300
-
-      .gallery_header {
-        width: 30%; //func_perc(1920, 1000);
-      }
     }
   }
 
@@ -417,14 +413,6 @@
         .paint_prot_price {
           width: func_rem(210); // 300 //220
         }
-      }
-    }
-  }
-
-  .gallery {
-    .gallery_conteiner {
-      .gallery_header {
-        width: 22.5%; //func_perc(1920, 1000);
       }
     }
   }
