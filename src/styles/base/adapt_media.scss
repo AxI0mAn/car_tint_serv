@@ -1079,6 +1079,29 @@
   }
 }
 
+//========================================================max-width: 600px
+
+@media screen and (max-width: 600px) {
+  .paint_prot {
+    .paint_prot_conteiner {
+      flex-flow: column nowrap; //nowrap //row
+
+      .paint_prot_showcase {
+        width: 100%;
+        height: auto; //40%; //func_rem(340);
+        grid-template-columns: repeat(2, 1fr); //repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr); //new
+        grid-gap: 1px 1px; //3px 3px; //new
+
+        .paint_prot_price {
+          max-width: 100%; //func_rem(250); //220
+          justify-self: center; // new
+        }
+      }
+    }
+  }
+}
+
 //========================================================max-width: 490px
 
 @media screen and (max-width: 490px) {
@@ -1122,25 +1145,6 @@
 
       .wind_tint_btn_eye {
         height: 100%; //func_rem(65);
-      }
-    }
-  }
-
-  .paint_prot {
-    .paint_prot_conteiner {
-      flex-flow: column nowrap; //nowrap //row
-
-      .paint_prot_showcase {
-        width: 100%;
-        height: auto; //40%; //func_rem(340);
-        grid-template-columns: repeat(2, 1fr); //repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr); //new
-        grid-gap: 1px 1px; //3px 3px; //new
-
-        .paint_prot_price {
-          max-width: 100%; //func_rem(250); //220
-          justify-self: center; // new
-        }
       }
     }
   }
