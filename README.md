@@ -29,7 +29,6 @@
     - drop menu.
 - ### JS
   - customized button from video play
-  - customized gallery
   - modal window
     - phone number verification
     - email verification
@@ -40,6 +39,8 @@
   - optimization image, CSS, JS,
   - Babel, Prettier
   - and other packeges
+
+- ### Swiperjs
 - ### Git
   - GitLens
   - gh-pages
